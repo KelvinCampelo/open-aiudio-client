@@ -1,8 +1,5 @@
 import React from 'react';
-import InputField from '../atoms/InputField';
-import Select from '../atoms/Select';
-import TextArea from '../atoms/TextArea';
-import RangeInput from '../atoms/RangeInput';
+import FormField from '../molecules/FormField';
 import Button from '../atoms/Button';
 import { DeleteIcon } from '@/icons';
 
@@ -41,42 +38,48 @@ const TextToSpeechForm: React.FC<TextToSpeechFormProps> = ({
   const voices = ['alloy', 'echo', 'fable', 'onyx', 'nova', 'shimmer'];
 
   return (
-    <div className="space-y-4">
-      <div className='flex items-center space-x-2'>
-        <InputField
-          type="password"
-          placeholder="Enter API Key"
-          value={apiKey}
-          onChange={setApiKey}
-        />
-        {apiKey && (<Button onClick={clearApiKey} icon={<DeleteIcon />} className="w-6" />)}
-      </div>
-      <Select
+    <div>
+      <FormField
+        type="password"
+        label="API Key"
+        value={apiKey}
+        className="w-full flex flex-wrap gap-2 [&>*:nth-child(1)]:w-full [&>*:nth-child(2)]:flex-1"
+        onChange={setApiKey}
+        placeholder="Enter API Key"
+      >
+        {apiKey && (<Button onClick={clearApiKey} icon={<DeleteIcon />} className="w-12" />)}
+      </FormField>
+      <FormField
+        type="select"
+        label="Model"
         value={model}
         onChange={setModel}
         options={models.map(m => ({ value: m, label: m }))}
-        placeholder="Select model"
       />
-      <TextArea
+      <FormField
+        type="textarea"
+        label="Text"
         value={text}
         onChange={setText}
         placeholder="Enter text to convert to speech (max 4096 characters)"
         maxLength={4096}
       />
-      <Select
+      <FormField
+        type="select"
+        label="Voice"
         value={voice}
         onChange={setVoice}
         options={voices.map(v => ({ value: v, label: v }))}
-        placeholder="Select voice"
       />
-      <RangeInput
+      <FormField
+        type="range"
         id="speed"
         label="Speed"
+        value={speed}
+        onChange={setSpeed}
         min={0.25}
         max={4}
         step={0.25}
-        value={speed}
-        onChange={setSpeed}
       />
       <Button
         onClick={onSubmit}

@@ -23,8 +23,8 @@ const RangeInput: React.FC<RangeInputProps> = ({
 }) => {
   return (
     <div className={`flex flex-col ${className}`}>
-      <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
-        {label}: {value}
+      <label htmlFor={id} className="block text-xs font-medium text-gray-700 mb-1">
+        {label} value: {value}
       </label>
       <input
         type="range"
