@@ -54,7 +54,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
     >
-      {icon && <span>{icon}</span>}
+      {icon && <span className='w-4 h-4'>{icon}</span>}
       {children}
     </button>
   );

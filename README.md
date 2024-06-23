@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Open Audio Client
+
+This is a Next.js application that provides a user interface for interacting with OpenAI's audio APIs, including text-to-speech and speech-to-text.
+
+## Features
+
+- **Text-to-speech:** Convert text into audio using OpenAI's text-to-speech API.
+- **Speech-to-text (WIP):** Transcribe audio into text using OpenAI's speech-to-text API.
+- **History:** Keep track of your previous conversions and easily access them again.
+- **Audio playback:** Play back the generated audio directly in the browser.
+- **Download:** Download the generated audio files for offline use.
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository:**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   git clone https://github.com/your-username/open-audio-client.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+    npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. **Start the development server:**
 
-## Learn More
+```bash
+    npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Open your browser and navigate to http://localhost:3000 to see the application in action.**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Select an API:** Choose either "Text-to-speech" or "Speech-to-text" (WIP) from the navigation menu.
+2. **Enter your input:**
+   - For **Text-to-speech**, provide the text you want to convert.
+   - For **Speech-to-text**, upload an audio file. (WIP)
+3. **Configure settings:** Customize the voice, speed, and other settings for your conversion.
+4. **Generate audio:** Click the "Generate" button to start the conversion process.
+5. **Play or download:** Listen to the generated audio or download it for offline use.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Here's how you can contribute:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Report issues:** If you encounter any bugs or have suggestions for improvements, please open an issue on GitHub.
+- **Submit pull requests:** If you have code changes or new features to add, please submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more information.
+
+## Acknowledgements
+
+- OpenAI for providing the powerful audio APIs.
+- Next.js for providing a robust framework for building web applications.
+- Tailwind CSS for providing a utility-first CSS framework.
+
+## Contact
+
+For any questions or feedback, please contact kelvsousa@gmail.com

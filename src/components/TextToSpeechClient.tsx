@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import TextToSpeechLayout from './layouts/TextToSpeechLayout';
 
 interface HistoryItem {
@@ -21,7 +21,6 @@ const TextToSpeechClient: React.FC = () => {
   const [audioUrl, setAudioUrl] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const audioRef = useRef<HTMLAudioElement>(null);
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const [currentlyPlaying, setCurrentlyPlaying] = useState<string | null>(null);
 
@@ -92,8 +91,6 @@ const TextToSpeechClient: React.FC = () => {
       setCurrentlyPlaying(null);
     }
   };
-
-
 
   const handleDelete = (id: number) => {
     setHistory(prevHistory => prevHistory.filter(item => item.id !== id));
