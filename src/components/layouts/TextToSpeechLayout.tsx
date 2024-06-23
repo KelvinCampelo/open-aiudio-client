@@ -6,6 +6,7 @@ import AudioPlayer from "../atoms/AudioPlayer";
 interface TextToSpeechLayoutProps {
   apiKey: string;
   setApiKey: (value: string) => void;
+  clearApiKey: () => void;
   model: string;
   setModel: (value: string) => void;
   text: string;
@@ -38,6 +39,7 @@ interface TextToSpeechLayoutProps {
 const TextToSpeechLayout: React.FC<TextToSpeechLayoutProps> = ({
   apiKey,
   setApiKey,
+  clearApiKey,
   model,
   setModel,
   text,
@@ -56,7 +58,7 @@ const TextToSpeechLayout: React.FC<TextToSpeechLayoutProps> = ({
   onDelete,
   onDownload,
   onEnded,
-  currentlyPlaying
+  currentlyPlaying,
 }) => {
   return (
     <div className="w-full max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
@@ -65,6 +67,7 @@ const TextToSpeechLayout: React.FC<TextToSpeechLayoutProps> = ({
         <TextToSpeechForm
           apiKey={apiKey}
           setApiKey={setApiKey}
+          clearApiKey={clearApiKey}
           model={model}
           setModel={setModel}
           text={text}

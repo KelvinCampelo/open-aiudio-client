@@ -4,10 +4,12 @@ import Select from '../atoms/Select';
 import TextArea from '../atoms/TextArea';
 import RangeInput from '../atoms/RangeInput';
 import Button from '../atoms/Button';
+import { DeleteIcon } from '@/icons';
 
 interface TextToSpeechFormProps {
   apiKey: string;
   setApiKey: (value: string) => void;
+  clearApiKey: () => void;
   model: string;
   setModel: (value: string) => void;
   text: string;
@@ -23,6 +25,7 @@ interface TextToSpeechFormProps {
 const TextToSpeechForm: React.FC<TextToSpeechFormProps> = ({
   apiKey,
   setApiKey,
+  clearApiKey,
   model,
   setModel,
   text,
@@ -39,12 +42,15 @@ const TextToSpeechForm: React.FC<TextToSpeechFormProps> = ({
 
   return (
     <div className="space-y-4">
-      <InputField
-        type="password"
-        placeholder="Enter API Key"
-        value={apiKey}
-        onChange={setApiKey}
-      />
+      <div className='flex items-center space-x-2'>
+        <InputField
+          type="password"
+          placeholder="Enter API Key"
+          value={apiKey}
+          onChange={setApiKey}
+        />
+        {apiKey && (<Button onClick={clearApiKey} icon={<DeleteIcon />} className="w-6" />)}
+      </div>
       <Select
         value={model}
         onChange={setModel}

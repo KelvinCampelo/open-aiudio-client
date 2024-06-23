@@ -1,7 +1,6 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TextToSpeechLayout from './layouts/TextToSpeechLayout';
-
 interface HistoryItem {
   id: number;
   text: string;
@@ -23,6 +22,23 @@ const TextToSpeechClient: React.FC = () => {
   const [error, setError] = useState('');
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const [currentlyPlaying, setCurrentlyPlaying] = useState<string | null>(null);
+
+  useEffect(() => {
+    const storedApiKey = localStorage.getItem('apiKey');
+    if (storedApiKey) {
+      setApiKey(storedApiKey);
+    }
+  }, []);
+
+  const handleApiKeyChange = (newApiKey: string) => {
+    setApiKey(newApiKey);
+    localStorage.setItem('apiKey', newApiKey);
+  };
+
+  const clearApiKey = () => {
+    localStorage.removeItem('apiKey');
+    setApiKey('');
+  };
 
   const generateSpeech = async () => {
     setIsLoading(true);
@@ -106,7 +122,8 @@ const TextToSpeechClient: React.FC = () => {
   return (
     <TextToSpeechLayout
       apiKey={apiKey}
-      setApiKey={setApiKey}
+      setApiKey={handleApiKeyChange}
+      clearApiKey={clearApiKey}
       model={model}
       setModel={setModel}
       text={text}
@@ -131,3 +148,4 @@ const TextToSpeechClient: React.FC = () => {
 };
 
 export default TextToSpeechClient;
+
