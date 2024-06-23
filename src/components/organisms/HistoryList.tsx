@@ -29,19 +29,26 @@ const HistoryList: React.FC<HistoryListProps> = ({
   return (
     <div className="mt-8">
       <h3 className="text-xl font-semibold mb-4">History</h3>
-      <div className="space-y-4">
-        {history.map((item) => (
-          <HistoryItem
-            key={item.id}
-            {...item}
-            onPlay={onPlay}
-            onPause={onPause}
-            onDelete={onDelete}
-            onDownload={onDownload}
-            currentlyPlaying={currentlyPlaying}
-          />
-        ))}
-      </div>
+      {history.length === 0 ? (
+        <div className="text-center text-gray-500 py-8">
+          <p>No history items yet.</p>
+          <p>Your generated audio will appear here.</p>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {history.map((item) => (
+            <HistoryItem
+              key={item.id}
+              {...item}
+              onPlay={onPlay}
+              onPause={onPause}
+              onDelete={onDelete}
+              onDownload={onDownload}
+              currentlyPlaying={currentlyPlaying}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
