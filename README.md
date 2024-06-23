@@ -2,6 +2,12 @@
 
 This is a Next.js application that provides a user interface for interacting with OpenAI's audio APIs, including text-to-speech and speech-to-text.
 
+## [Live Demo](https://kelvincampelo.github.io/open-aiudio-client/)
+
+## Screenshot
+
+![Screenshot](./docs/screenshot.png)
+
 ## Features
 
 - **Text-to-speech:** Convert text into audio using OpenAI's text-to-speech API.
@@ -34,13 +40,14 @@ This is a Next.js application that provides a user interface for interacting wit
 
 ## Usage
 
-1. **Select an API:** Choose either "Text-to-speech" or "Speech-to-text" (WIP) from the navigation menu.
-2. **Enter your input:**
+1. **Fill in your OpenAI API key:** Enter your API key in the designated field. You can obtain an API key from the [OpenAI website](https://platform.openai.com/account/api-keys).
+2. **Select an API:** Choose either "Text-to-speech" or "Speech-to-text" (WIP) from the navigation menu.
+3. **Enter your input:**
    - For **Text-to-speech**, provide the text you want to convert.
    - For **Speech-to-text**, upload an audio file. (WIP)
-3. **Configure settings:** Customize the voice, speed, and other settings for your conversion.
-4. **Generate audio:** Click the "Generate" button to start the conversion process.
-5. **Play or download:** Listen to the generated audio or download it for offline use.
+4. **Configure settings:** Customize the voice, speed, and other settings for your conversion.
+5. **Generate audio:** Click the "Generate" button to start the conversion process.
+6. **Play or download:** Listen to the generated audio or download it for offline use.
 
 ## Contributing
 
